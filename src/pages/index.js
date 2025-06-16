@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <h1>Bienvenido</h1>
       <Image
-        src="/images/seo-image.png"
+        src="/images/seo-image.jpg"
         width={800}
         height={400}
         alt="Ejemplo de imagen optimizada"
