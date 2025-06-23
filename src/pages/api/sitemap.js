@@ -1,17 +1,16 @@
 const BASE_URL = 'https://proyecto-seo.vercel.app';
 
 export default async function handler(req, res) {
-  const staticPages = ['/', '/blog', '/contacto'];
+  const staticPages = ['', '/blog', '/contacto'];
+  const posts = [
+    { slug: 'post-1' },
+    { slug: 'post-2' }
+  ];
 
-  let urls = staticPages.map(path => `
-    <url>
-      <loc>${BASE_URL}${path}</loc>
-    </url>`).join('');
-
-  urls += posts.map(post => `
-    <url>
-      <loc>${BASE_URL}/blog/${post.slug}</loc>
-    </url>`).join('');
+  const urls = [
+    ...staticPages.map(path => `<url><loc>${BASE_URL}${path}</loc></url>`),
+    ...posts.map(post => `<url><loc>${BASE_URL}/blog/${post.slug}</loc></url>`)
+  ].join('');
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -19,6 +18,5 @@ export default async function handler(req, res) {
   </urlset>`;
 
   res.setHeader('Content-Type', 'application/xml');
-  res.write(sitemap);
-  res.end();
+  res.status(200).end(sitemap);
 }
