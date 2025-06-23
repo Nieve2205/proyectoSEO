@@ -1,21 +1,17 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Mi Sitio Optimizado - Home</title>
-        <meta name="description" content="Aprende sobre optimización SEO y rendimiento en Next.js." />
-        <meta name="keywords" content="Next.js, SEO, optimización web" />
-        <meta property="og:title" content="Mi Sitio Optimizado" />
-        <meta property="og:description" content="Descubre técnicas avanzadas para mejorar tu web con Next.js." />
-        <meta property="og:image" content="/images/seo-image.png" />
+        <title>Inicio | MiSitio</title>
+        <meta name="description" content="Bienvenido a la página de inicio de MiSitio." />
+        <meta property="og:title" content="Inicio | MiSitio" />
+        <meta property="og:description" content="Bienvenido a la página de inicio de MiSitio." />
         <meta property="og:type" content="website" />
-        <meta name="google-site-verification" content="_yancC9QfnLGcIQyKx5Zaa4hbm4VGGiQXDNv6wdFDYI" />
+        <meta property="og:url" content="https://proyecto-seo.vercel.app/" />
       </Head>
-
-      <h1>Bienvenido a mi página optimizada</h1>
-      <p>Aprende cómo mejorar el rendimiento y SEO en Next.js.</p>
+      <main>Contenido</main>
     </>
   );
 }
